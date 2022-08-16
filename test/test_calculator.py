@@ -16,3 +16,9 @@ def test_price_calculator(price, volatility, rate, dividend, time, strike, perio
 
     assert result_call == pytest.approx(expected_call, rel=1e-4)
     assert result_put == pytest.approx(expected_put, rel=1e-4)
+
+
+def test_price_calculator_invalid_binomial_parameter():
+    with pytest.raises(AssertionError):
+        _ = price_option(Option.CALL, 20, .10, .12, 0., 1., 21, 1)
+    

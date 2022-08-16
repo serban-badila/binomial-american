@@ -25,7 +25,7 @@ def price_option(option: Option, price: float, sigma: float, r: float, dividend:
     up = np.exp(sigma * np.sqrt(dt))  # price increase rate; the random walk is symmetric on the log scale so the
     # downwards rate is 1/up
     prob = _compute_binomial_parameter(dt, r, dividend, up)  # the parameter of the Binomial distribution
-    
+    assert prob < 1, f"invalid binomial parameter {prob}. Should be a probability."
     stock_price = _compute_stock_price(n, price, up)
     
     boundary_function = np.vectorize(lambda x: max(x-k, 0)) if option == Option.CALL else np.vectorize(lambda x: max(k-x, 0))
