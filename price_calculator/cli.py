@@ -1,5 +1,3 @@
-from enum import Enum
-from importlib.metadata import requires
 import click
 from utils import price_option, Option
 
