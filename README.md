@@ -1,3 +1,5 @@
+![PyTests](https://github.com/serban-badila/binomial-american/actions/workflows/pytest.yml/badge.svg)
+
 # binomial-american
 Price calculator for american options using binomial trees
 
