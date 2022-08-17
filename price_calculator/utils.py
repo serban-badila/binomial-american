@@ -77,7 +77,7 @@ def _compute_stock_price(n: int, p: float, up: float):
     
     Args:
         n: the level in the binomial tree (contains n+1 vertices)
-        p: the risk-neutral probability of an upward jump for the binomial stock price change
+        p: the initial the stock price
         up: the rate of increase in case of an upward jump for the stock price
     """
     iter = (p * np.power(up, n-i) * np.power(1/up, i) for i in range(n+1))
