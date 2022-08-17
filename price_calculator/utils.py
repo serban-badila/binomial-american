@@ -8,7 +8,7 @@ class Option(Enum):
     CALL = 'call'
 
 
-def price_option(option: Option, price: float, sigma: float, r: float, dividend:float, t: float, k: float, n: int) -> Dict[Option, float]:
+def price_option(option: Option, price: float, sigma: float, r: float, dividend:float, t: float, k: float, n: int) -> float:
     """Price an American Option using a binomial tree approximation.
     
     Args:
